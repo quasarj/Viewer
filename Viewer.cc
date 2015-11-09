@@ -1,9 +1,9 @@
 #include <QImage>
 #include <QPixmap>
 #include <QDebug>
-#include "window.h"
+#include "Viewer.h"
 
-Window::Window(QWidget *parent) {
+Viewer::Viewer(QWidget *parent) {
     if (parent) {
         // silence the warning about not using parent. yeeeeah this is dumb.
     }
@@ -21,14 +21,14 @@ Window::Window(QWidget *parent) {
     setImage(imglist->next());
 }
 
-void Window::setImage(QString filename) {
+void Viewer::setImage(QString filename) {
     QImage image = QImage();
 
     image.load(filename);
     setPixmap(QPixmap().fromImage(image));
 }
 
-void Window::keyPressEvent(QKeyEvent* event) {
+void Viewer::keyPressEvent(QKeyEvent* event) {
     switch (event->key()) {
         case Qt::Key_Q:
             close();
@@ -50,17 +50,17 @@ void Window::keyPressEvent(QKeyEvent* event) {
     //QLabel::keyPressEvent(event);
 }
 
-void Window::nextImage() {
+void Viewer::nextImage() {
     qDebug() << "Moving to next image";
     setImage(imglist->next());
 }
 
-void Window::prevImage() {
+void Viewer::prevImage() {
     qDebug() << "Moving to previoius image";
     setImage(imglist->prev());
 }
 
-void Window::toggleFullscreen() {
+void Viewer::toggleFullscreen() {
     if (fullscreen)
         showNormal();
     else

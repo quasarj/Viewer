@@ -4,12 +4,12 @@
 
 #include <ImageList.cc>
 
-class Window: public QLabel {
+class Viewer: public QLabel {
 private:
 		bool fullscreen;
 		ImageList* imglist;
 public:
-		Window(QWidget*);
+		Viewer(QWidget*);
 		void nextImage();
 		void prevImage();
 		void toggleFullscreen();

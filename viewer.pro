@@ -3,11 +3,11 @@
 ######################################################################
 
 TEMPLATE = app
-TARGET = c_imageviewer
+TARGET = viewer
 INCLUDEPATH += .
 
 QT += widgets
 
 # Input
-HEADERS += window.h
-SOURCES += ImageList.cc test.cc window.cc
+HEADERS += Viewer.h
+SOURCES += ImageList.cc main.cc Viewer.cc
