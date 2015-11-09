@@ -57,6 +57,7 @@ void Window::nextImage() {
 
 void Window::prevImage() {
     qDebug() << "Moving to previoius image";
+    setImage(imglist->prev());
 }
 
 void Window::toggleFullscreen() {

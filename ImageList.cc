@@ -7,13 +7,20 @@ public:
         qDebug() << "Starting up the ImageList!";
 
         load(path);
-        pos = 0;
+        pos = -1;
         this->path = path;
     }
 
     QString next() {
-        // return path + QString("/") + images[pos++];
-        return path + "/" + images[pos++];
+        if (pos >= images.length() - 1)
+            pos = -1;
+        return path + "/" + images[++pos];
+    }
+
+    QString prev() {
+        if (pos <= 0)
+            pos = images.length();
+        return path + "/" + images[--pos];
     }
 
 private:
