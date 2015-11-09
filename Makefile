@@ -315,10 +315,11 @@ compiler_clean:
 
 ####### Compile
 
-test.o: test.cc 
+test.o: test.cc window.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o test.o test.cc
 
-window.o: window.cc window.h
+window.o: window.cc window.h \
+		ImageList.cc
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o window.o window.cc
 
 ####### Install

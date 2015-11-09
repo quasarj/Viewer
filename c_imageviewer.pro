@@ -10,4 +10,4 @@ QT += widgets
 
 # Input
 HEADERS += window.h
-SOURCES += test.cc window.cc
+SOURCES += ImageList.cc test.cc window.cc
